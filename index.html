@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>卡地亚官网 - 著名法国珠宝商及高级制表商。婚礼系列、奢侈配件、香水及高级礼品</title>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0"/>
+    <meta content= "卡地亚Cartier官网,中国官方唯一在线精品店,传承百年卓越品质,不断书写世界珠宝及腕表设计制作的历史,历久弥新,光彩夺目.即刻访问卡地亚官网,感受华美杰作!" name="description">
+    <link rel="stylesheet" href="css/bootstrap.css"/>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/index.css"/>
+    <link rel="stylesheet" href="css/base.css"/>
+
+</head>
+<body>
+    <!-- 引入头部-->
+    <header>
+        <iframe class="my_header" src="header.html" frameborder="0" scrolling="no"></iframe>
+    </header>
+
+    <!-- 主体内容-->
+    <div id="slider">
+        <img src="./img/slideshow-panthere_01_oct1_CN.jpg.scale.1248.high.jpg" class="show"/>
+        <img src="./img/slideshow-panthere_02_oct1_CN.jpg.scale.1248.high.jpg"/>
+    </div>
+
+    <script>
+        var imgs=slider.children;
+        for(var img of imgs){
+            img.onclick=function(){
+                var img=this;
+                alert(img.alt);
+            }
+        }
+
+        function task(){
+            var img=slider.getElementsByClassName("show")[0];
+            img.className="";
+            if(img.nextElementSibling){
+                img.nextElementSibling.className = "show";
+            }else{
+                img.parentNode.children[0].className="show";
+            }
+        }
+        var timer=setInterval(task,3000);
+
+        slider.onmouseover=function(){
+            clearInterval(timer)
+        };
+        slider.onmouseout=function(){
+            timer=setInterval(task,3000);
+        };
+
+    </script>
+
+    <div id="second_img">
+        <div id="mo_2">
+            <span id="taiyangyanjing">太阳眼镜</span>
+            <a href="#">购买此系列</a>
+        </div>
+        <img src="./img/MP1_premiere_sunglasses.jpg.scale.1248.390.high.jpg"/>
+    </div>
+
+    <div id="third_img">
+        <img src="./img/MP1_panthere_jewelry.jpg.scale.1248.390.high.jpg"/>
+    </div>
+
+    <div id="forth_img">
+        <img class="forth_img_1" src="./img/SP1_ballon_blanc_opt1.jpg.scale.612.275.high.jpg"/>
+        <img class="forth_img_2" src="./img/SP1_pluie.jpg.scale.612.275.high.jpg"/>
+    </div>
+
+    <!-- 引入底部-->
+    <footer>
+        <iframe class="my_footer" src="footer.html" frameborder="0" scrolling="no"></iframe>
+    </footer>
+
+</body>
+</html>
